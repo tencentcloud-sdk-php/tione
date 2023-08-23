@@ -18,47 +18,59 @@ namespace TencentCloud\Tione\V20211111\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 任务建模Pod信息
+ * notebook ssh端口配置
  *
- * @method string getName() 获取pod名
+ * @method boolean getEnable() 获取是否开启ssh
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setName(string $Name) 设置pod名
+ * @method void setEnable(boolean $Enable) 设置是否开启ssh
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getIP() 获取pod的IP
+ * @method string getPublicKey() 获取公钥信息
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setIP(string $IP) 设置pod的IP
+ * @method void setPublicKey(string $PublicKey) 设置公钥信息
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getStatus() 获取pod状态
+ * @method integer getPort() 获取端口号
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setStatus(string $Status) 设置pod状态
+ * @method void setPort(integer $Port) 设置端口号
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getLoginCommand() 获取登录命令
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setLoginCommand(string $LoginCommand) 设置登录命令
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class PodInfo extends AbstractModel
+class SSHConfig extends AbstractModel
 {
     /**
-     * @var string pod名
+     * @var boolean 是否开启ssh
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Name;
+    public $Enable;
 
     /**
-     * @var string pod的IP
+     * @var string 公钥信息
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $IP;
+    public $PublicKey;
 
     /**
-     * @var string pod状态
+     * @var integer 端口号
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Status;
+    public $Port;
 
     /**
-     * @param string $Name pod名
+     * @var string 登录命令
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $IP pod的IP
+     */
+    public $LoginCommand;
+
+    /**
+     * @param boolean $Enable 是否开启ssh
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Status pod状态
+     * @param string $PublicKey 公钥信息
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param integer $Port 端口号
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $LoginCommand 登录命令
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -74,16 +86,20 @@ class PodInfo extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Name",$param) and $param["Name"] !== null) {
-            $this->Name = $param["Name"];
+        if (array_key_exists("Enable",$param) and $param["Enable"] !== null) {
+            $this->Enable = $param["Enable"];
         }
 
-        if (array_key_exists("IP",$param) and $param["IP"] !== null) {
-            $this->IP = $param["IP"];
+        if (array_key_exists("PublicKey",$param) and $param["PublicKey"] !== null) {
+            $this->PublicKey = $param["PublicKey"];
         }
 
-        if (array_key_exists("Status",$param) and $param["Status"] !== null) {
-            $this->Status = $param["Status"];
+        if (array_key_exists("Port",$param) and $param["Port"] !== null) {
+            $this->Port = $param["Port"];
+        }
+
+        if (array_key_exists("LoginCommand",$param) and $param["LoginCommand"] !== null) {
+            $this->LoginCommand = $param["LoginCommand"];
         }
     }
 }
