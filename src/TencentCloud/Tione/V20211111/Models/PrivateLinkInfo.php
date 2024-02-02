@@ -18,51 +18,51 @@ namespace TencentCloud\Tione\V20211111\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 私有连接通道信息
+ * 私有连接信息
  *
- * @method string getVpcId() 获取用户VpcId
+ * @method string getVpcId() 获取私有连接所在的VPCID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setVpcId(string $VpcId) 设置用户VpcId
+ * @method void setVpcId(string $VpcId) 设置私有连接所在的VPCID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getSubnetId() 获取用户子网ID
+ * @method string getSubnetId() 获取私有连接所在的子网ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSubnetId(string $SubnetId) 设置用户子网ID
+ * @method void setSubnetId(string $SubnetId) 设置私有连接所在的子网ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getInnerHttpAddr() 获取内网http调用地址
+ * @method array getInnerHttpAddr() 获取HTTP内网调用地址
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setInnerHttpAddr(array $InnerHttpAddr) 设置内网http调用地址
+ * @method void setInnerHttpAddr(array $InnerHttpAddr) 设置HTTP内网调用地址
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getInnerHttpsAddr() 获取内网https调用地址
+ * @method array getInnerHttpsAddr() 获取HTTPS内网调用地址
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setInnerHttpsAddr(array $InnerHttpsAddr) 设置内网https调用地址
+ * @method void setInnerHttpsAddr(array $InnerHttpsAddr) 设置HTTPS内网调用地址
 注意：此字段可能返回 null，表示取不到有效值。
  * @method string getState() 获取私有连接状态
 注意：此字段可能返回 null，表示取不到有效值。
  * @method void setState(string $State) 设置私有连接状态
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class IngressPrivateLinkInfo extends AbstractModel
+class PrivateLinkInfo extends AbstractModel
 {
     /**
-     * @var string 用户VpcId
+     * @var string 私有连接所在的VPCID
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $VpcId;
 
     /**
-     * @var string 用户子网ID
+     * @var string 私有连接所在的子网ID
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $SubnetId;
 
     /**
-     * @var array 内网http调用地址
+     * @var array HTTP内网调用地址
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $InnerHttpAddr;
 
     /**
-     * @var array 内网https调用地址
+     * @var array HTTPS内网调用地址
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $InnerHttpsAddr;
@@ -74,13 +74,13 @@ class IngressPrivateLinkInfo extends AbstractModel
     public $State;
 
     /**
-     * @param string $VpcId 用户VpcId
+     * @param string $VpcId 私有连接所在的VPCID
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $SubnetId 用户子网ID
+     * @param string $SubnetId 私有连接所在的子网ID
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $InnerHttpAddr 内网http调用地址
+     * @param array $InnerHttpAddr HTTP内网调用地址
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $InnerHttpsAddr 内网https调用地址
+     * @param array $InnerHttpsAddr HTTPS内网调用地址
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $State 私有连接状态
 注意：此字段可能返回 null，表示取不到有效值。
