@@ -18,26 +18,19 @@ namespace TencentCloud\Tione\V20211111\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * SendChatMessage返回参数结构体
+ * DescribeBillingSpecsPrice返回参数结构体
  *
- * @method string getAnswer() 获取答案
- * @method void setAnswer(string $Answer) 设置答案
- * @method string getSessionId() 获取会话id,返回请求的会话id
- * @method void setSessionId(string $SessionId) 设置会话id,返回请求的会话id
+ * @method array getSpecsPrice() 获取计费项价格，支持批量返回
+ * @method void setSpecsPrice(array $SpecsPrice) 设置计费项价格，支持批量返回
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class SendChatMessageResponse extends AbstractModel
+class DescribeBillingSpecsPriceResponse extends AbstractModel
 {
     /**
-     * @var string 答案
+     * @var array 计费项价格，支持批量返回
      */
-    public $Answer;
-
-    /**
-     * @var string 会话id,返回请求的会话id
-     */
-    public $SessionId;
+    public $SpecsPrice;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -45,8 +38,7 @@ class SendChatMessageResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $Answer 答案
-     * @param string $SessionId 会话id,返回请求的会话id
+     * @param array $SpecsPrice 计费项价格，支持批量返回
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -62,12 +54,13 @@ class SendChatMessageResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Answer",$param) and $param["Answer"] !== null) {
-            $this->Answer = $param["Answer"];
-        }
-
-        if (array_key_exists("SessionId",$param) and $param["SessionId"] !== null) {
-            $this->SessionId = $param["SessionId"];
+        if (array_key_exists("SpecsPrice",$param) and $param["SpecsPrice"] !== null) {
+            $this->SpecsPrice = [];
+            foreach ($param["SpecsPrice"] as $key => $value){
+                $obj = new SpecPrice();
+                $obj->deserialize($value);
+                array_push($this->SpecsPrice, $obj);
+            }
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
