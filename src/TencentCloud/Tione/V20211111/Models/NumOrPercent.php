@@ -18,28 +18,28 @@ namespace TencentCloud\Tione\V20211111\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * http get 行为
+ * 用于表示百分比或数量
  *
- * @method string getPath() 获取http 路径
- * @method void setPath(string $Path) 设置http 路径
- * @method integer getPort() 获取调用端口
- * @method void setPort(integer $Port) 设置调用端口
+ * @method string getType() 获取Num,Percent ,分别表示数量和百分比，默认为 Num
+ * @method void setType(string $Type) 设置Num,Percent ,分别表示数量和百分比，默认为 Num
+ * @method integer getValue() 获取数值
+ * @method void setValue(integer $Value) 设置数值
  */
-class HTTPGetAction extends AbstractModel
+class NumOrPercent extends AbstractModel
 {
     /**
-     * @var string http 路径
+     * @var string Num,Percent ,分别表示数量和百分比，默认为 Num
      */
-    public $Path;
+    public $Type;
 
     /**
-     * @var integer 调用端口
+     * @var integer 数值
      */
-    public $Port;
+    public $Value;
 
     /**
-     * @param string $Path http 路径
-     * @param integer $Port 调用端口
+     * @param string $Type Num,Percent ,分别表示数量和百分比，默认为 Num
+     * @param integer $Value 数值
      */
     function __construct()
     {
@@ -54,12 +54,12 @@ class HTTPGetAction extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Path",$param) and $param["Path"] !== null) {
-            $this->Path = $param["Path"];
+        if (array_key_exists("Type",$param) and $param["Type"] !== null) {
+            $this->Type = $param["Type"];
         }
 
-        if (array_key_exists("Port",$param) and $param["Port"] !== null) {
-            $this->Port = $param["Port"];
+        if (array_key_exists("Value",$param) and $param["Value"] !== null) {
+            $this->Value = $param["Value"];
         }
     }
 }

@@ -18,28 +18,20 @@ namespace TencentCloud\Tione\V20211111\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * http get 行为
+ * 执行命令探针检查行为
  *
- * @method string getPath() 获取http 路径
- * @method void setPath(string $Path) 设置http 路径
- * @method integer getPort() 获取调用端口
- * @method void setPort(integer $Port) 设置调用端口
+ * @method array getCommand() 获取执行命令列表
+ * @method void setCommand(array $Command) 设置执行命令列表
  */
-class HTTPGetAction extends AbstractModel
+class ExecAction extends AbstractModel
 {
     /**
-     * @var string http 路径
+     * @var array 执行命令列表
      */
-    public $Path;
+    public $Command;
 
     /**
-     * @var integer 调用端口
-     */
-    public $Port;
-
-    /**
-     * @param string $Path http 路径
-     * @param integer $Port 调用端口
+     * @param array $Command 执行命令列表
      */
     function __construct()
     {
@@ -54,12 +46,8 @@ class HTTPGetAction extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Path",$param) and $param["Path"] !== null) {
-            $this->Path = $param["Path"];
-        }
-
-        if (array_key_exists("Port",$param) and $param["Port"] !== null) {
-            $this->Port = $param["Port"];
+        if (array_key_exists("Command",$param) and $param["Command"] !== null) {
+            $this->Command = $param["Command"];
         }
     }
 }
