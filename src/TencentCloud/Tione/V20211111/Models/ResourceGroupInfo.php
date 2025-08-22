@@ -18,28 +18,28 @@ namespace TencentCloud\Tione\V20211111\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 公有云数据源结构
+ * 在线服务中服务的资源组简略信息结构
  *
- * @method string getDataSourceId() 获取数据源id
- * @method void setDataSourceId(string $DataSourceId) 设置数据源id
- * @method string getSubPath() 获取相对数据源子路径
- * @method void setSubPath(string $SubPath) 设置相对数据源子路径
+ * @method string getResourceGroupId() 获取资源组 id
+ * @method void setResourceGroupId(string $ResourceGroupId) 设置资源组 id
+ * @method string getResourceGroupName() 获取资源组名称
+ * @method void setResourceGroupName(string $ResourceGroupName) 设置资源组名称
  */
-class PublicDataSourceFS extends AbstractModel
+class ResourceGroupInfo extends AbstractModel
 {
     /**
-     * @var string 数据源id
+     * @var string 资源组 id
      */
-    public $DataSourceId;
+    public $ResourceGroupId;
 
     /**
-     * @var string 相对数据源子路径
+     * @var string 资源组名称
      */
-    public $SubPath;
+    public $ResourceGroupName;
 
     /**
-     * @param string $DataSourceId 数据源id
-     * @param string $SubPath 相对数据源子路径
+     * @param string $ResourceGroupId 资源组 id
+     * @param string $ResourceGroupName 资源组名称
      */
     function __construct()
     {
@@ -54,12 +54,12 @@ class PublicDataSourceFS extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("DataSourceId",$param) and $param["DataSourceId"] !== null) {
-            $this->DataSourceId = $param["DataSourceId"];
+        if (array_key_exists("ResourceGroupId",$param) and $param["ResourceGroupId"] !== null) {
+            $this->ResourceGroupId = $param["ResourceGroupId"];
         }
 
-        if (array_key_exists("SubPath",$param) and $param["SubPath"] !== null) {
-            $this->SubPath = $param["SubPath"];
+        if (array_key_exists("ResourceGroupName",$param) and $param["ResourceGroupName"] !== null) {
+            $this->ResourceGroupName = $param["ResourceGroupName"];
         }
     }
 }

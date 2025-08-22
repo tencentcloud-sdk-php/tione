@@ -18,28 +18,20 @@ namespace TencentCloud\Tione\V20211111\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 公有云数据源结构
+ * 服务的调度策略配置
  *
- * @method string getDataSourceId() 获取数据源id
- * @method void setDataSourceId(string $DataSourceId) 设置数据源id
- * @method string getSubPath() 获取相对数据源子路径
- * @method void setSubPath(string $SubPath) 设置相对数据源子路径
+ * @method boolean getCrossResourceGroupScheduling() 获取是否启用了跨资源组调度开关
+ * @method void setCrossResourceGroupScheduling(boolean $CrossResourceGroupScheduling) 设置是否启用了跨资源组调度开关
  */
-class PublicDataSourceFS extends AbstractModel
+class SchedulingPolicy extends AbstractModel
 {
     /**
-     * @var string 数据源id
+     * @var boolean 是否启用了跨资源组调度开关
      */
-    public $DataSourceId;
+    public $CrossResourceGroupScheduling;
 
     /**
-     * @var string 相对数据源子路径
-     */
-    public $SubPath;
-
-    /**
-     * @param string $DataSourceId 数据源id
-     * @param string $SubPath 相对数据源子路径
+     * @param boolean $CrossResourceGroupScheduling 是否启用了跨资源组调度开关
      */
     function __construct()
     {
@@ -54,12 +46,8 @@ class PublicDataSourceFS extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("DataSourceId",$param) and $param["DataSourceId"] !== null) {
-            $this->DataSourceId = $param["DataSourceId"];
-        }
-
-        if (array_key_exists("SubPath",$param) and $param["SubPath"] !== null) {
-            $this->SubPath = $param["SubPath"];
+        if (array_key_exists("CrossResourceGroupScheduling",$param) and $param["CrossResourceGroupScheduling"] !== null) {
+            $this->CrossResourceGroupScheduling = $param["CrossResourceGroupScheduling"];
         }
     }
 }
