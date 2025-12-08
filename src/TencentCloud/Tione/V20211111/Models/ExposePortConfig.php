@@ -18,29 +18,16 @@ namespace TencentCloud\Tione\V20211111\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeModelService请求参数结构体
+ * 暴露端口信息
  *
- * @method string getServiceId() 获取服务id
- * @method void setServiceId(string $ServiceId) 设置服务id
- * @method string getServiceCategory() 获取服务分类
- * @method void setServiceCategory(string $ServiceCategory) 设置服务分类
+
  */
-class DescribeModelServiceRequest extends AbstractModel
+class ExposePortConfig extends AbstractModel
 {
-    /**
-     * @var string 服务id
-     */
-    public $ServiceId;
+
 
     /**
-     * @var string 服务分类
-     * @deprecated
-     */
-    public $ServiceCategory;
 
-    /**
-     * @param string $ServiceId 服务id
-     * @param string $ServiceCategory 服务分类
      */
     function __construct()
     {
@@ -55,12 +42,6 @@ class DescribeModelServiceRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("ServiceId",$param) and $param["ServiceId"] !== null) {
-            $this->ServiceId = $param["ServiceId"];
-        }
 
-        if (array_key_exists("ServiceCategory",$param) and $param["ServiceCategory"] !== null) {
-            $this->ServiceCategory = $param["ServiceCategory"];
-        }
     }
 }
