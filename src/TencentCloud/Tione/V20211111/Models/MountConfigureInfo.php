@@ -20,18 +20,18 @@ use TencentCloud\Common\AbstractModel;
 /**
  * 数据源挂载配置
  *
- * @method string getWorkDir() 获取数据源的相对路径，支持<@subaccount>这样的占位符
- * @method void setWorkDir(string $WorkDir) 设置数据源的相对路径，支持<@subaccount>这样的占位符
+ * @method string getWorkDir() 获取<p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>
+ * @method void setWorkDir(string $WorkDir) 设置<p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>
  */
 class MountConfigureInfo extends AbstractModel
 {
     /**
-     * @var string 数据源的相对路径，支持<@subaccount>这样的占位符
+     * @var string <p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>
      */
     public $WorkDir;
 
     /**
-     * @param string $WorkDir 数据源的相对路径，支持<@subaccount>这样的占位符
+     * @param string $WorkDir <p>数据源的相对路径，支持&lt;@subaccount&gt;这样的占位符</p>
      */
     function __construct()
     {
